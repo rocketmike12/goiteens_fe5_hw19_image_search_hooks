@@ -1,0 +1,32 @@
+.searchbar {
+	padding: 20px;
+	margin: 20px;
+	outline: 1px solid #cba6f7;
+    width: calc(100% - 40px);
+
+	&__input {
+		padding: 20px;
+		background-color: #0a000c;
+		color: #cba6f7;
+		outline: 1px solid #cba6f7;
+
+		&::placeholder {
+			color: #cba6f7;
+		}
+
+		&:focus {
+			background-color: #1f1626;
+		}
+	}
+
+	&__btn {
+		padding: 20px;
+		background-color: #0a000c;
+		color: #cba6f7;
+		outline: 1px solid #cba6f7;
+
+		&:hover {
+			background-color: #1f1626;
+		}
+	}
+}
