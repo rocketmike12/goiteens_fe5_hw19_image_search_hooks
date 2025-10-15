@@ -11,6 +11,7 @@ import { ImageModal } from "./components/ImageModal/ImageModal";
 import styles from "./App.module.scss";
 
 const API_KEY = import.meta.env.VITE_PIXABAY_API_KEY;
+axios.defaults.baseURL = "https://pixabay.com/api/";
 
 class App extends Component {
 	constructor() {
@@ -22,7 +23,7 @@ class App extends Component {
 	getData = async () => {
 		this.setState({ isLoading: true });
 
-		const res = await axios.get(`https://pixabay.com/api/?q=${this.state.search}&page=1&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=${this.state.currentPage * 4}`);
+		const res = await axios.get(`/?q=${this.state.search}&page=1&key=${API_KEY}&image_type=photo&orientation=horizontal&per_page=${this.state.currentPage * 4}`);
 
 		this.setState({ images: res.data.hits, toLoad: res.data.hits.length });
 		this.setState({ isLoading: false });
